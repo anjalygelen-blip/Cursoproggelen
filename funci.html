@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fideito</title>
+    <title>calduladora</title>
 </head>
+
 <body>
     <script>
-         function realizaroperacion(num1, num2, num3, operacion){
+        function realizaroperacion(num1, num2, operacion){
             let resultado;
             if(operacion === "suma"){
-                resultado = num1 + num2+ num3;
+                resultado = num1 + num2;
             } else if (operacion === "resta"){
-                resultado = num1 - num2- num3;
+                resultado = num1 - num2;
             } else if (operacion === "multiplicacion"){
-                resultado = num1 * num2* num3;
+                resultado = num1 * num2;
             } else if (operacion === "division"){
-                if(num3 !== 0){
-                    resultado = num1 / num2 / num3;
+                if(num2 !== 0){
+                    resultado = num1 / num2;
                 } else {
                     return "Error: División por cero no es permitida.";
                 }
@@ -28,20 +30,21 @@
         }
 
 
-        let num1, num2, num3, operacion;
+        let num1, num2, operacion;
         num1 = parseFloat(prompt("Ingrese el primer número:"));
         num2 = parseFloat(prompt("Ingrese el segundo número:"));
         operacion = prompt("Ingrese la operación (suma, resta, multiplicacion, division, salir):");
         while (operacion != "salir") {
-            let resultado = realizaroperacion(num1, num2, num3, operacion);
+            let resultado = realizaroperacion(num1, num2, operacion);
             alert("Resultado: " + resultado);
             num1 = parseFloat(prompt("Ingrese el primer número:"));
             num2 = parseFloat(prompt("Ingrese el segundo número:"));
-            num3 = parseFloat(prompt("Ingrese el tercer número:"));
             operacion = prompt("Ingrese la operación (suma, resta, multiplicacion, division, salir):");
             
         }
-    </script>
+        
 
-</body>
+    </script>
+</body> 
+
 </html>
